@@ -3,6 +3,7 @@ import './App.css';
 import Header from './component/Home/Header/Header';
 import Home from './component/Home/Home';
 import NoteFound from './component/Home/NoteFound/NoteFound';
+import Inventory from './component/Inventory/Inventory';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/inventory:id' element={<Inventory></Inventory>}></Route>
         <Route path='*' element={<NoteFound></NoteFound>}></Route>
       </Routes>
     </div>

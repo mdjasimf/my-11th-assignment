@@ -14,6 +14,7 @@ const Home = () => {
     return (
         <div>
             <BannerCarosel></BannerCarosel>
+            <h1 className='text-center text-success'>Inventory items</h1>
             <div className='container mx-auto my-5 d-flex justify-content-center row'>
                 {
                     allFruits.slice(0, 6).map(fruit => <Fruits

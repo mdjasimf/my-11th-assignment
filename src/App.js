@@ -4,7 +4,9 @@ import AllInventory from './component/AllInventory/AllInventory';
 import Header from './component/Header/Header';
 import Home from './component/Home/Home';
 import Inventory from './component/Inventory/Inventory';
+import Login from './component/Login/Login';
 import NoteFound from './component/NoteFound/NoteFound';
+import Registration from './component/Registraton/Registration';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/allinventory' element={<AllInventory></AllInventory>}></Route>
+        <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/registration' element={<Registration></Registration>}></Route>
         <Route path='/inventory:id' element={<Inventory></Inventory>}></Route>
         <Route path='*' element={<NoteFound></NoteFound>}></Route>
       </Routes>

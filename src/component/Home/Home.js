@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import useAllFruits from '../../hooks/useAllFruits';
 import BannerCarosel from '../BannerCarosel/BannerCarosel';
 import Fruits from '../Fruits/Fruits';
 
 const Home = () => {
-    const [allFruits, setAllfruits] = useState([]);
-    console.log(allFruits);
-    useEffect(() => {
-        const url = 'http://localhost:5000/allFruits';
-        fetch(url)
-            .then(response => response.json())
-            .then(data => setAllfruits(data));
-    }, [])
+    const [allFruits] = useAllFruits();
+
+    const navigate = useNavigate();
+    const handleAllInventory = () => {
+        navigate('/allinventory')
+    }
     return (
         <div>
             <BannerCarosel></BannerCarosel>
@@ -22,6 +21,9 @@ const Home = () => {
                         fruit={fruit}
                     ></Fruits>)
                 }
+            </div>
+            <div className='text-center my-5'>
+                <button onClick={() => handleAllInventory()} type="button" className="btn btn-success ">Manage Inventories</button>
             </div>
         </div>
     );

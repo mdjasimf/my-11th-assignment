@@ -65,7 +65,9 @@ const Inventory = () => {
                 <h3><u>Supplier Name:</u> {fruit.supplierName}</h3>
                 <h3><u>Price:</u> $ {fruit.price} Per kg</h3>
                 <h4><u>Quantity:</u> {fruit.quantity}kg</h4>
+                <h6>Id: {fruit._id}</h6>
                 <h6>{fruit.shortDescriptions}</h6>
+
                 <div className='d-flex justify-content-center'>
                     <div className='mx-3'>
                         <button type="button" className="btn btn-info w-100" onClick={handleReduceQuantity}>Delivered</button>

@@ -77,10 +77,12 @@ const Login = () => {
         await sendPasswordResetEmail(userInfo.email);
         toast('Sent email');
     };
-
+    const handleRegistration = () => {
+        navigate('/registration');
+    }
     return (
         <div>
-            <h1 className='login-title text-center'>PLEASE Login</h1>
+            <h3 className='login-title text-center'>PLEASE LOGIN</h3>
             <div className='d-flex justify-content-center'>
                 <form onSubmit={handleLogin} className='border border-primary p-4'>
                     <input onChange={handleEmailChange} type="email" placeholder='Your email' /><br />
@@ -96,6 +98,7 @@ const Login = () => {
             <div className='text-center mt-2'>
                 <button onClick={SendPasswordReset}>Foget Password</button>
             </div>
+            <h6 className='text-center mt-2'>Haven't any account?<button onClick={handleRegistration}>Please Registration</button></h6>
         </div>
     );
 };

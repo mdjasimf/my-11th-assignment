@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import useAllFruits from '../../hooks/useAllFruits';
 
-const AllInventory = () => {
+const ManageInventory = () => {
+    const navigate = useNavigate();
+
     const [allFruits] = useAllFruits();
 
     const handleFruitsDelete = id => {
@@ -14,12 +17,13 @@ const AllInventory = () => {
                 .then(response => response.json())
                 .then(data => {
                     console.log(data)
-                    alert('Delete confirm');
                 })
         }
     }
 
-
+    const handleAddItem = () => {
+        navigate('/addnewitem');
+    }
 
 
     return (
@@ -27,11 +31,12 @@ const AllInventory = () => {
             <h1>All Inventory</h1>
             {
                 allFruits.map(fruit => <div key={fruit._id}>
-                    <h1>{fruit.name}<button onClick={() => handleFruitsDelete(fruit._id)}>X</button></h1>
+                    <h1>{fruit.name}<button onClick={() => handleFruitsDelete(fruit._id)}>Delete</button></h1>
                 </div>)
             }
+            <button onClick={handleAddItem} type="button" class="btn btn-success">Add item</button>
         </div>
     );
 };
 
-export default AllInventory;
+export default ManageInventory;

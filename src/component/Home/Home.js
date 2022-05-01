@@ -8,7 +8,7 @@ const Home = () => {
 
     const navigate = useNavigate();
     const handleAllInventory = () => {
-        navigate('/allinventory')
+        navigate('/manageInventory')
     }
     return (
         <div>

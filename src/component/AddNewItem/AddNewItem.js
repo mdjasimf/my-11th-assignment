@@ -1,9 +1,12 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { auth } from '../../firebase.init';
 import Loading from '../Loading/Loading';
 
 const AddNewItem = () => {
+    const navigate = useNavigate();
 
     const [user, loading] = useAuthState(auth);
     if (loading) {
@@ -18,9 +21,31 @@ const AddNewItem = () => {
             quantity: event.target.quantity.value,
             email: user.email,
             shortDescription: event.target.descriptions.value,
+
         }
         console.log(addItem);
+        const url = 'http://localhost:5000/allFruits';
+        fetch(url, {
+            method: 'post',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(addItem)
+
+        })
+            .then(response => response.json())
+            .then(result => {
+                console.log(result);
+                alert('successfully item added');
+                event.target.reset();
+            })
+
     }
+
+    // const handlemyItems = () => {
+    //     navigate('/userItems');
+    // }
+
     return (
         <div>
             <h1 className='text-center'>add item</h1>

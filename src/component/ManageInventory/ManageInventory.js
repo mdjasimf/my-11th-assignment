@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import useAllFruits from '../../hooks/useAllFruits';
 
@@ -6,7 +5,6 @@ const ManageInventory = () => {
     const navigate = useNavigate();
 
     const [allFruits] = useAllFruits();
-
     const handleFruitsDelete = id => {
         const permit = window.confirm('Sure want to delete');
         if (permit) {

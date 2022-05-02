@@ -1,14 +1,13 @@
-import { useEffect, useState } from "react";
-
+import { useEffect, useState } from "react"
 
 const useAllFruits = () => {
-    const [allFruits, setAllfruits] = useState([]);
+    const [allFruits, setallFruits] = useState([]);
     useEffect(() => {
-        const url = 'http://localhost:5000/allFruits';
-        fetch(url)
-            .then(response => response.json())
-            .then(data => setAllfruits(data));
+        fetch('http://localhost:5000/allFruits')
+            .then(Response => Response.json())
+            .then(data => setallFruits(data))
     }, [])
-    return [allFruits, setAllfruits];
+
+    return [allFruits, setallFruits];
 }
 export default useAllFruits;

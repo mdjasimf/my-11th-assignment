@@ -85,11 +85,11 @@ const Login = () => {
             <h3 className='login-title text-center'>PLEASE LOGIN</h3>
             <div className='d-flex justify-content-center'>
                 <form onSubmit={handleLogin} className='border border-primary p-4'>
-                    <input onChange={handleEmailChange} type="email" placeholder='Your email' /><br />
+                    <input className='my-3' onChange={handleEmailChange} type="email" placeholder='Your email' /><br />
                     {errors?.email && <p className='text-danger'>{errors.email}</p>}
                     <input onChange={handlePasswordChange} type="password" placeholder='Your password' /><br />
                     {errors?.password && <p className='text-danger'>{errors.password}</p>}<br />
-                    <button>REGISTRATION</button>
+                    <button>Login</button>
                 </form>
             </div>
             <div className='text-center'>

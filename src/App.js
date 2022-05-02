@@ -10,6 +10,7 @@ import ManageInventory from './component/ManageInventory/ManageInventory';
 import NoteFound from './component/NoteFound/NoteFound';
 import PrivateAuth from './component/PrivateAuth/PrivateAuth';
 import Registration from './component/Registration/Registration';
+import UserItems from './component/UserItems/UserItems';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           </PrivateAuth>
         }></Route>
         <Route path='/addNewItem' element={<AddNewItem></AddNewItem>}></Route>
+        <Route path='/userItems' element={<UserItems></UserItems>}></Route>
         <Route path='*' element={<NoteFound></NoteFound>}></Route>
       </Routes>
       <ToastContainer></ToastContainer>

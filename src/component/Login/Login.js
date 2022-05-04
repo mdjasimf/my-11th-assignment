@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -47,9 +48,15 @@ const Login = () => {
             setUserInfo({ ...userInfo, password: '' });
         }
     }
-    const handleLogin = e => {
-        signInWithEmailAndPassword(userInfo.email, userInfo.password);
-        e.preventDefault();
+    const handleLogin = async event => {
+        const email = userInfo.email;
+        const password = userInfo.password;
+        event.preventDefault();
+        await signInWithEmailAndPassword(email, password);
+        const { data } = await axios.post('http://localhost:5000/login', { email })
+        localStorage.setItem('accessToken', data.accessToken);
+        navigate(from, { replace: true });
+
     }
     useEffect(() => {
         if (hookError || googleError) {
@@ -68,7 +75,7 @@ const Login = () => {
 
     }, [hookError || googleError]);
     if (user || googleUser) {
-        navigate(from, { replace: true });
+        // navigate(from, { replace: true });
     }
     if (loading || loading2) {
         return <Loading></Loading>

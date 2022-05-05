@@ -14,17 +14,19 @@ const Inventory = () => {
             .then(data => setFruit(data));
     }, [id]);
 
-
+    const { quantity } = fruit;
     const handleReduceQuantity = () => {
-        const quantity = fruit.quantity - 1;
-        const updateQuantity = { quantity };
+
+        const newQuantity = quantity - 1;
+        const newFruit = { ...fruit, quantity: newQuantity }
+        setFruit(newFruit);
         const url = `http://localhost:5000/allFruits/${id}`;
         fetch(url, {
             method: 'put',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(updateQuantity)
+            body: JSON.stringify(newFruit)
         })
             .then(response => response.json())
             .then(data => {
@@ -35,10 +37,10 @@ const Inventory = () => {
 
     const handleAddQuantity = (event) => {
         event.preventDefault();
-        const newQuantity = event.target.name.value;
-        const quantity = parseInt(fruit.quantity) + parseInt(newQuantity);
-        console.log(quantity);
-        const updateQuantity = { quantity };
+        const newAddQuantity = event.target.name.value;
+        const Addquantity = parseInt(quantity) + parseInt(newAddQuantity);
+        const updateQuantity = { ...fruit, quantity: Addquantity };
+        setFruit(updateQuantity);
         const url = `http://localhost:5000/allFruits/${id}`;
         fetch(url, {
             method: 'put',

@@ -23,7 +23,6 @@ const AddNewItem = () => {
             shortDescription: event.target.descriptions.value,
 
         }
-        console.log(addItem);
         const url = 'http://localhost:5000/allFruits';
         fetch(url, {
             method: 'post',

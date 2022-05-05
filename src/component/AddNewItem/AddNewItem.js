@@ -1,12 +1,9 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
 import { auth } from '../../firebase.init';
 import Loading from '../Loading/Loading';
 
 const AddNewItem = () => {
-    const navigate = useNavigate();
 
     const [user, loading] = useAuthState(auth);
     if (loading) {

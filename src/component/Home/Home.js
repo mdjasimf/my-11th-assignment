@@ -1,7 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 import useAllFruits from '../../hooks/useAllFruits';
 import BannerCarosel from '../BannerCarosel/BannerCarosel';
+import BestDeliver from '../BestDeliver/BestDeliver';
+import Footer from '../Footer/Footer';
 import Fruits from '../Fruits/Fruits';
+import NewArrival from '../NewArrival/NewArrival';
 
 const Home = () => {
     const [allFruits] = useAllFruits();
@@ -13,7 +16,7 @@ const Home = () => {
     return (
         <div>
             <BannerCarosel></BannerCarosel>
-            <h1 className='text-center text-success'>Inventory items</h1>
+            <h1 className='text-center text-success mt-5'>Inventory items</h1>
             <div className='container mx-auto my-5 d-flex justify-content-center row'>
                 {
                     allFruits.slice(0, 6).map(fruit => <Fruits
@@ -22,9 +25,12 @@ const Home = () => {
                     ></Fruits>)
                 }
             </div>
-            <div className='text-center my-5'>
-                <button onClick={() => handleAllInventory()} type="button" className="btn btn-success ">Manage Inventories</button>
+            <div className='text-end my-5'>
+                <button onClick={() => handleAllInventory()} type="button" className="btn btn-info ">Manage Inventories</button>
             </div>
+            <NewArrival></NewArrival>
+            <BestDeliver></BestDeliver>
+            <Footer></Footer>
         </div>
     );
 };

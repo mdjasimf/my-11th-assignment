@@ -4,7 +4,7 @@ import useAllFruits from '../../hooks/useAllFruits';
 const ManageInventory = () => {
     const navigate = useNavigate();
 
-    const [allFruits] = useAllFruits();
+    const [allFruits, setAllFruits] = useAllFruits();
     const handleFruitsDelete = id => {
         const permit = window.confirm('Sure want to delete');
         if (permit) {
@@ -14,7 +14,8 @@ const ManageInventory = () => {
             })
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data)
+                    const remaining = allFruits.filter(allFruit => allFruit._id !== id)
+                    setAllFruits(remaining);
                 })
         }
     }

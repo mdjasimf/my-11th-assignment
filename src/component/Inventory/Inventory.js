@@ -8,7 +8,7 @@ const Inventory = () => {
     const { id } = useParams();
     const [fruit, setFruit] = useState({});
     useEffect(() => {
-        const url = `http://localhost:5000/allFruits/${id}`;
+        const url = `https://young-earth-40481.herokuapp.com/allFruits/${id}`;
         fetch(url)
             .then(response => response.json())
             .then(data => setFruit(data));
@@ -16,11 +16,13 @@ const Inventory = () => {
 
     const { quantity } = fruit;
     const handleReduceQuantity = () => {
-
+        if (quantity === 0) {
+            return alert('Sold out')
+        }
         const newQuantity = quantity - 1;
         const newFruit = { ...fruit, quantity: newQuantity }
         setFruit(newFruit);
-        const url = `http://localhost:5000/allFruits/${id}`;
+        const url = `https://young-earth-40481.herokuapp.com/allFruits/${id}`;
         fetch(url, {
             method: 'put',
             headers: {
@@ -41,7 +43,7 @@ const Inventory = () => {
         const Addquantity = parseInt(quantity) + parseInt(newAddQuantity);
         const updateQuantity = { ...fruit, quantity: Addquantity };
         setFruit(updateQuantity);
-        const url = `http://localhost:5000/allFruits/${id}`;
+        const url = `https://young-earth-40481.herokuapp.com/allFruits/${id}`;
         fetch(url, {
             method: 'put',
             headers: {

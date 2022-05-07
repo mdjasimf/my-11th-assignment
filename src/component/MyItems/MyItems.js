@@ -5,39 +5,38 @@ import { auth } from '../../firebase.init';
 import Loading from '../Loading/Loading';
 
 const UserItems = () => {
-    const [user, loading] = useAuthState(auth);
     const [myItems, setmyItems] = useState([]);
-
+    const [user, loading] = useAuthState(auth);
+    console.log(user.email)
     useEffect(() => {
         const getItems = async () => {
             const email = user.email;
-            const url = `http://localhost:5000/myitems?email=${email}`;
+            const url = `https://young-earth-40481.herokuapp.com/myitems?email=${email}`;
             const { data } = await axios.get(url, {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
                 }
             });
             setmyItems(data);
+
         }
         getItems();
     }, [user])
-
-
-
     const handleMyItemDelete = id => {
         const permit = window.confirm('Sure want to delete');
         if (permit) {
-            const url = `http://localhost:5000/allFruits/${id}`
+            const url = `https://young-earth-40481.herokuapp.com/allFruits/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
                 .then(response => response.json())
                 .then(data => {
                     console.log(data)
+                    const remaining = myItems.filter(myItem => myItem._id !== id)
+                    setmyItems(remaining);
                 })
         }
     }
-
     if (loading) {
         return <Loading></Loading>
     }

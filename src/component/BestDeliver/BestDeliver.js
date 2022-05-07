@@ -7,7 +7,7 @@ const BestDeliver = () => {
             name: event.target.name.value,
             totalDeliver: event.target.deliver.value,
         }
-        const url = 'http://localhost:5000/bestDeliverFruits';
+        const url = 'https://young-earth-40481.herokuapp.com/bestDeliverFruits';
         fetch(url, {
             method: 'post',
             headers: {
@@ -26,7 +26,7 @@ const BestDeliver = () => {
     }
     const [bestDelivers, setBestDelivers] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/bestDeliverFruits')
+        fetch('https://young-earth-40481.herokuapp.com/bestDeliverFruits')
             .then(Response => Response.json())
             .then(data => setBestDelivers(data))
     }, [])
@@ -40,7 +40,7 @@ const BestDeliver = () => {
             {
                 bestDelivers.map(bestDeliver => <div className='d-flex justify-content-center'>
                     <div key={bestDeliver._id}>
-                        <h2>{bestDeliver.name} <span className='text-danger border border-info rounded-circle'>{bestDeliver.totalDeliver}</span></h2>
+                        <h2>{bestDeliver.name} <span className='text-danger border border-success rounded-circle'>{bestDeliver.totalDeliver}</span>kg</h2>
                     </div>
                 </div>)
             }

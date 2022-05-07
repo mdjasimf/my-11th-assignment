@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import './App.css';
+import About from './component/About/About';
 import AddNewItem from './component/AddNewItem/AddNewItem';
 import Blogs from './component/Blogs/Blogs';
 import Header from './component/Header/Header';
@@ -11,7 +12,7 @@ import ManageInventory from './component/ManageInventory/ManageInventory';
 import NoteFound from './component/NoteFound/NoteFound';
 import PrivateAuth from './component/PrivateAuth/PrivateAuth';
 import Registration from './component/Registration/Registration';
-import UserItems from './component/UserItems/UserItems';
+import MyItems from './component/MyItems/MyItems'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='/about' element={<About></About>}></Route>
         <Route path='/manageInventory' element={
           <PrivateAuth>
             <ManageInventory></ManageInventory>
@@ -34,7 +36,7 @@ function App() {
           </PrivateAuth>
         }></Route>
         <Route path='/addNewItem' element={<AddNewItem></AddNewItem>}></Route>
-        <Route path='/userItems' element={<UserItems></UserItems>}></Route>
+        <Route path='/myitems' element={<MyItems></MyItems>}></Route>
         <Route path='*' element={<NoteFound></NoteFound>}></Route>
       </Routes>
       <ToastContainer></ToastContainer>

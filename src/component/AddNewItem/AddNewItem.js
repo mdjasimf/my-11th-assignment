@@ -20,7 +20,7 @@ const AddNewItem = () => {
             shortDescription: event.target.descriptions.value,
 
         }
-        const url = 'http://localhost:5000/allFruits';
+        const url = 'https://young-earth-40481.herokuapp.com/allFruits';
         fetch(url, {
             method: 'post',
             headers: {

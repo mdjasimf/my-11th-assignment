@@ -1,5 +1,7 @@
+import { Button, Card, Table } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import useAllFruits from '../../hooks/useAllFruits';
+import './ManageInventory.css'
 
 const ManageInventory = () => {
     const navigate = useNavigate();
@@ -8,7 +10,7 @@ const ManageInventory = () => {
     const handleFruitsDelete = id => {
         const permit = window.confirm('Sure want to delete');
         if (permit) {
-            const url = `http://localhost:5000/allFruits/${id}`
+            const url = `https://young-earth-40481.herokuapp.com/allFruits/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
@@ -27,13 +29,34 @@ const ManageInventory = () => {
 
     return (
         <div>
-            <h1>All Inventory</h1>
-            {
-                allFruits.map(fruit => <div key={fruit._id}>
-                    <h1>{fruit.name}<button onClick={() => handleFruitsDelete(fruit._id)}>Delete</button></h1>
-                </div>)
-            }
-            <button onClick={handleAddItem} type="button" class="btn btn-success">Add item</button>
+            <div className='container'>
+                <Table striped bordered hover variant="dark">
+                    <thead>
+                        <tr>
+                            <th>Fruit Name</th>
+                            <th>Fruit</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            allFruits.map(fruit => <tr key={fruit._id}>
+                                <td>{fruit.name}</td>
+                                <td ><img className='fruit-img' src={fruit.img} alt="" /></td>
+                                <td>{fruit.quantity}kg</td>
+                                <td>${fruit.price}</td>
+                                <td><Button variant="primary" onClick={() => handleFruitsDelete(fruit._id)}>Delete</Button></td>
+                            </tr>)
+                        }
+                    </tbody>
+                </Table>
+
+            </div>
+            <div className='text-center my-5'>
+                <button onClick={handleAddItem} type="button" class="btn btn-success">Add item</button>
+            </div>
         </div>
     );
 };

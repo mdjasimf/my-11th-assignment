@@ -5,11 +5,13 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { auth } from '../../firebase.init';
 import Loading from '../Loading/Loading';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-bootstrap';
 
 const Login = () => {
     const [signInWithEmailAndPassword, user, loading, hookError,] = useSignInWithEmailAndPassword(auth);
     const [signInWithGoogle, googleUser, loading2, googleError] = useSignInWithGoogle(auth);
-    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(
         auth
     );
     const navigate = useNavigate();
@@ -53,7 +55,8 @@ const Login = () => {
         const password = userInfo.password;
         event.preventDefault();
         await signInWithEmailAndPassword(email, password);
-        const { data } = await axios.post('http://localhost:5000/login', { email })
+        const { data } = await axios.post('https://young-earth-40481.herokuapp.com/login', { email })
+        console.log(data);
         localStorage.setItem('accessToken', data.accessToken);
         navigate(from, { replace: true });
 
@@ -62,13 +65,13 @@ const Login = () => {
         if (hookError || googleError) {
             switch (hookError?.code) {
                 case "auth/invalid-email":
-                    alert('please give a valid email');
+                    toast('please give a valid email');
                     break;
                 case "auth/invalid-password":
                     alert('please give a valid password');
                     break;
                 default:
-                    alert('something went wrong')
+                    toast('something went wrong')
             }
 
         }
@@ -106,6 +109,7 @@ const Login = () => {
                 <button onClick={SendPasswordReset}>Foget Password</button>
             </div>
             <h6 className='text-center mt-2'>Haven't any account?<button onClick={handleRegistration}>Please Registration</button></h6>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

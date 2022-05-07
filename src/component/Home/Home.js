@@ -4,7 +4,9 @@ import BannerCarosel from '../BannerCarosel/BannerCarosel';
 import BestDeliver from '../BestDeliver/BestDeliver';
 import Footer from '../Footer/Footer';
 import Fruits from '../Fruits/Fruits';
-import NewArrival from '../NewArrival/NewArrival';
+import NewComing from '../NewComing/NewComing';
+
+
 
 const Home = () => {
     const [allFruits] = useAllFruits();
@@ -28,7 +30,7 @@ const Home = () => {
             <div className='text-end my-5'>
                 <button onClick={() => handleAllInventory()} type="button" className="btn btn-info ">Manage Inventories</button>
             </div>
-            <NewArrival></NewArrival>
+            <NewComing></NewComing>
             <BestDeliver></BestDeliver>
             <Footer></Footer>
         </div>

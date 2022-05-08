@@ -28,7 +28,7 @@ const ManageInventory = () => {
 
 
     return (
-        <div className='container my-2'>
+        <div className='container my-2 row'>
             <div className='d-flex justify-content-center'>
                 <div className='col-12'>
                     <Table striped bordered hover variant="dark">

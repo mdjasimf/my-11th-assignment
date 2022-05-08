@@ -13,7 +13,7 @@ const AddNewItem = () => {
         event.preventDefault();
         const addItem = {
             name: event.target.name.value,
-            PhotoUrl: event.target.photo.value,
+            img: event.target.photo.value,
             price: event.target.price.value,
             quantity: event.target.quantity.value,
             email: user.email,

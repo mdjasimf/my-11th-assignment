@@ -43,8 +43,10 @@ const UserItems = () => {
     return (
         <div>
             {
-                myItems.map(myItem => <div>
-                    <h1>{myItem.name}<button onClick={() => handleMyItemDelete(myItem._id)}>Delete</button></h1>
+                myItems.map(myItem => <div className='text-center'>
+                    <h1>{myItem.name}</h1>
+                    <img src={myItem.img} alt="" /><br />
+                    <button onClick={() => handleMyItemDelete(myItem._id)}>Delete</button>
                 </div>
                 )
             }

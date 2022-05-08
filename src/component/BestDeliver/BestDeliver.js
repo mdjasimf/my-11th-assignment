@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './BestDeliver.css';
 
 const BestDeliver = () => {
     const handleAddNewItem = event => {
@@ -30,7 +31,6 @@ const BestDeliver = () => {
             .then(Response => Response.json())
             .then(data => setBestDelivers(data))
     }, [])
-
     return (
         <div className='my-5'>
             <h1 className='text-center text-success'>Best Deliver Of The Month</h1>
@@ -49,7 +49,7 @@ const BestDeliver = () => {
                     <input className='w-50 m-2' type="text" name="name" placeholder='Product name' required />
                     <br />
                     <input className='w-50 m-2' type="text" name="deliver" placeholder='total deliver' required /><br />
-                    <button className='btn btn-info'>Submit</button>
+                    <button className='btn btn-info submit-button'>Submit</button>
                 </form>
             </div>
         </div>

@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
 import useAllFruits from '../../hooks/useAllFruits';
 import BannerCarosel from '../BannerCarosel/BannerCarosel';
 import BestDeliver from '../BestDeliver/BestDeliver';
@@ -7,6 +6,7 @@ import Footer from '../Footer/Footer';
 import Fruits from '../Fruits/Fruits';
 import Loading from '../Loading/Loading';
 import NewComing from '../NewComing/NewComing';
+import './Home.css';
 
 
 
@@ -34,7 +34,7 @@ const Home = () => {
                 }
             </div>
             <div className='text-end my-5'>
-                <button onClick={() => handleAllInventory()} type="button" className="btn btn-info ">Manage Inventories</button>
+                <button onClick={() => handleAllInventory()} type="button" className="btn btn-info manage-button ">Manage Inventories</button>
             </div>
             <NewComing></NewComing>
             <BestDeliver></BestDeliver>

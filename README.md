@@ -2,11 +2,11 @@
 
 This project was bootstrapped with [my site-fruits warehouse](https://my-11th-assignment.firebaseapp.com/).
 ## the things I have done:
-*first of all I create home. In this page  I create carosel images and inventory 6 items. then extra 2 section.
-*secondly, I create manage items. in the manage rout , I create a  deliver and add item system.
-*thirdly, I fix a login and register authentication system.
-*fourthly, I create my items and fix jwt. then I create blogs page where I answered 4 question. and then I fix other things.
-*finally, I deploy my server site on heroku and client side on firebase.
+* first of all I create home. In this page  I create carosel images and inventory 6 items. then extra 2 section.
+* secondly, I create manage items. in the manage rout , I create a  deliver and add item system.
+* thirdly, I fix a login and register authentication system.
+* fourthly, I create my items and fix jwt. then I create blogs page where I answered 4 question. and then I fix other     things.
+* finally, I deploy my server site on heroku and client side on firebase.
 
 
 

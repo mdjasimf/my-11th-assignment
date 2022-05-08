@@ -7,12 +7,12 @@ const NewComing = () => {
     return (
         <div className='my-2 container'>
             <h1 className='text-center text-success'><b>New Coming</b></h1>
-            <div className='w-25 mx-auto  my-3'>
+            <div className='w-25 mx-auto  my-1'>
                 <div className=' border-bottom border-success'></div>
             </div>
             <div className='d-flex justify-content-center'>
                 <div className='border rounded border-secondary p-2'>
-                    <h4 className='text-center'>Coconut</h4>
+                    <h4 className='text-center text-danger'><u>Coconut</u></h4>
                     <div className='d-flex justify-content-center'>
                         <img src={coconut} alt="" />
                     </div>
@@ -24,7 +24,7 @@ const NewComing = () => {
                         is rich with vitamins and antioxidants.</p>
                 </div>
                 <div className='ms-5 border rounded border-secondary p-2'>
-                    <h4 className='text-center'>Kiwi</h4>
+                    <h4 className='text-center text-danger'><u>Kiwi</u></h4>
                     <div className='d-flex justify-content-center'>
                         <img src={kiwi} alt="" />
                     </div>

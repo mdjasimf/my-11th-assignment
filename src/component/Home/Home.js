@@ -17,14 +17,16 @@ const Home = () => {
     const handleAllInventory = () => {
         navigate('/manageInventory')
     }
-    if (!allFruits) {
+    if (window.location.reload === true) {
         return <Loading></Loading>
     }
-
     return (
         <div>
             <BannerCarosel></BannerCarosel>
             <h1 className='text-center text-success mt-5'>Inventory items</h1>
+            <div className='w-25 mx-auto  my-1'>
+                <div className=' border-bottom border-success'></div>
+            </div>
             <div className='container mx-auto my-5 d-flex justify-content-center row'>
                 {
                     allFruits.slice(0, 6).map(fruit => <Fruits

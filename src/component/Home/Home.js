@@ -1,9 +1,11 @@
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import useAllFruits from '../../hooks/useAllFruits';
 import BannerCarosel from '../BannerCarosel/BannerCarosel';
 import BestDeliver from '../BestDeliver/BestDeliver';
 import Footer from '../Footer/Footer';
 import Fruits from '../Fruits/Fruits';
+import Loading from '../Loading/Loading';
 import NewComing from '../NewComing/NewComing';
 
 
@@ -15,6 +17,10 @@ const Home = () => {
     const handleAllInventory = () => {
         navigate('/manageInventory')
     }
+    if (!allFruits) {
+        return <Loading></Loading>
+    }
+
     return (
         <div>
             <BannerCarosel></BannerCarosel>

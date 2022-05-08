@@ -26,9 +26,7 @@ const ManageInventory = () => {
         navigate('/addnewitem');
     }
 
-    // const handeleInventory = (id) => {
-    //     navigate(`/inventory${id}`);
-    // }
+
     return (
         <div>
             <div className='container'>
@@ -49,7 +47,6 @@ const ManageInventory = () => {
                                 <td ><img className='fruit-img' src={fruit.img} alt="" /></td>
                                 <td>{fruit.quantity}kg</td>
                                 <td>${fruit.price}</td>
-                                {/* <td><button onClick={() => handeleInventory(allFruits._id)} type="button" className="btn btn-info w-100">Update</button></td> */}
                                 <td><Button variant="primary" onClick={() => handleFruitsDelete(fruit._id)}>Delete</Button></td>
                             </tr>)
                         }

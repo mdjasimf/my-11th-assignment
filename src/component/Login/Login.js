@@ -68,7 +68,7 @@ const Login = () => {
                     toast('please give a valid email');
                     break;
                 case "auth/invalid-password":
-                    alert('please give a valid password');
+                    toast('please give a valid password');
                     break;
                 default:
                     toast('something went wrong')

@@ -23,12 +23,12 @@ const Header = () => {
                             <Nav.Link as={Link} to="/blogs">Blogs</Nav.Link>
                             {
                                 user ?
-                                    <div className='d-flex'>
+                                    <>
                                         <Nav.Link as={Link} to="/manageInventory">Manage Item</Nav.Link>
                                         <Nav.Link as={Link} to="/addNewItem">Add Item</Nav.Link>
                                         <Nav.Link as={Link} to="/myitems">My Item</Nav.Link>
                                         <Nav.Link onClick={logOut} as={Link} to="/login">Logout</Nav.Link>
-                                    </div> :
+                                    </> :
                                     <Nav.Link as={Link} to="/login">Login</Nav.Link>
                             }
                             <Nav.Link as={Link} to="/about">About</Nav.Link>
@@ -36,7 +36,7 @@ const Header = () => {
                     </Navbar.Collapse>
                 </div>
             </Container>
-        </Navbar>
+        </Navbar >
     );
 };
 

@@ -28,9 +28,9 @@ const ManageInventory = () => {
 
 
     return (
-        <div className='container'>
-            <div className='mx-auto'>
-                <Table striped bordered hover variant="dark">
+        <div className='container my-5'>
+            <div className='container mx-auto'>
+                <Table striped bordered hover variant="dark" className='mx-auto w-50'>
                     <thead>
                         <tr>
                             <th>Fruit Name</th>

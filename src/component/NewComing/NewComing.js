@@ -6,8 +6,8 @@ const NewComing = () => {
 
     return (
         <div className='my-2 container'>
-            <h1 className='text-center text-success'><b>New Coming</b></h1>
-            <div className='w-25 mx-auto  my-1'>
+            <h1 className='text-center text-success'><b>New Coming!</b></h1>
+            <div className='w-25 mx-auto  my-2'>
                 <div className=' border-bottom border-success'></div>
             </div>
             <div className='d-flex justify-content-center'>

@@ -28,35 +28,30 @@ const ManageInventory = () => {
 
 
     return (
-        <div className='container my-2 row'>
-            <div className='d-flex justify-content-center'>
-                <div className='col-12'>
-                    <Table striped bordered hover variant="dark">
-                        <thead>
-                            <tr>
-                                <th>Fruit Name</th>
-                                <th>Fruit</th>
-                                <th>Quantity</th>
-                                <th>Price</th>
-                                <th>Delete</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                allFruits.map(fruit => <tr key={fruit._id}>
-                                    <td>{fruit.name}</td>
-                                    <td ><img className='fruit-img' src={fruit.img} alt="" /></td>
-                                    <td>{fruit.quantity}kg</td>
-                                    <td>${fruit.price}</td>
-                                    <td><Button variant="primary" onClick={() => handleFruitsDelete(fruit._id)}>Delete</Button></td>
-                                </tr>)
-                            }
-                        </tbody>
-                    </Table>
-
-                </div>
-            </div>
-            <div className='text-center my-2'>
+        <div>
+            <Table responsive striped bordered hover variant="dark" className='w-50'>
+                <thead>
+                    <tr>
+                        <th>Fruit Name</th>
+                        <th>Fruit</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        allFruits.map(fruit => <tr key={fruit._id}>
+                            <td>{fruit.name}</td>
+                            <td ><img className='fruit-img' src={fruit.img} alt="" /></td>
+                            <td>{fruit.quantity}kg</td>
+                            <td>${fruit.price}</td>
+                            <td><Button variant="primary" onClick={() => handleFruitsDelete(fruit._id)}>Delete</Button></td>
+                        </tr>)
+                    }
+                </tbody>
+            </Table>
+            <div className='my-2'>
                 <button onClick={handleAddItem} type="button" class="btn btn-primary">Add item</button>
             </div>
         </div>

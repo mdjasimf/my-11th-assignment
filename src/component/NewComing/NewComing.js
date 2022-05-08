@@ -12,7 +12,7 @@ const NewComing = () => {
             </div>
             <div className='d-flex justify-content-center'>
                 <div className='border rounded border-secondary p-2'>
-                    <h4 className='text-center text-danger'><u>Coconut</u></h4>
+                    <h4 className='text-center text-danger'><u>Kiwi</u></h4>
                     <div className='d-flex justify-content-center'>
                         <img src={coconut} alt="" />
                     </div>
@@ -24,7 +24,7 @@ const NewComing = () => {
                         is rich with vitamins and antioxidants.</p>
                 </div>
                 <div className='ms-5 border rounded border-secondary p-2'>
-                    <h4 className='text-center text-danger'><u>Kiwi</u></h4>
+                    <h4 className='text-center text-danger'><u>Coconut</u></h4>
                     <div className='d-flex justify-content-center'>
                         <img src={kiwi} alt="" />
                     </div>

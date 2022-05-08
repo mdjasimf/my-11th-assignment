@@ -14,9 +14,9 @@ const Fruits = ({ fruit }) => {
         <div className='fruits col-4 my-2'>
             <h3 className='text-center text-danger'><u>{name}</u></h3>
             <img src={img} alt="" />
-            <h6>Supplier Name: {supplierName}</h6>
-            <h6>Price:$ {price} Per kg</h6>
-            <h6>Quantity: {quantity}kg</h6>
+            <h6><b>Supplier Name:</b> {supplierName}</h6>
+            <h6><b>Price:</b> ${price} Per kg</h6>
+            <h6><b>Quantity:</b> {quantity}kg</h6>
             <h6>{shortDescriptions.slice(0, 50)}....</h6>
             <button onClick={() => handeleInventory(_id)} type="button" className="update-button btn btn-info w-100">Update</button>
         </div>

@@ -17,7 +17,7 @@ const Fruits = ({ fruit }) => {
             <h6><b>Supplier Name:</b> {supplierName}</h6>
             <h6><b>Price:</b> ${price} Per kg</h6>
             <h6><b>Quantity:</b> {quantity}kg</h6>
-            <h6>{shortDescriptions}</h6>
+            <h6><small>{shortDescriptions}</small></h6>
             <button onClick={() => handeleInventory(_id)} type="button" className="update-button btn btn-info w-100">Update</button>
         </div>
     );

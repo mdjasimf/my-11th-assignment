@@ -11,7 +11,7 @@ const Fruits = ({ fruit }) => {
 
 
     return (
-        <div className='fruits col-4 my-2'>
+        <div className='container fruits col-4 my-2'>
             <h3 className='text-center text-danger'><u>{name}</u></h3>
             <img src={img} alt="" />
             <h6><b>Supplier Name:</b> {supplierName}</h6>

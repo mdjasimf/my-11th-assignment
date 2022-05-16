@@ -35,7 +35,7 @@ const Home = () => {
                     ></Fruits>)
                 }
             </div>
-            <div className='text-end my-5'>
+            <div className='text-center my-5'>
                 <button onClick={() => handleAllInventory()} type="button" className="btn btn-info manage-button ">Manage Inventories</button>
             </div>
             <NewComing></NewComing>

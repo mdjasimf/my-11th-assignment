@@ -56,7 +56,6 @@ const Login = () => {
         event.preventDefault();
         await signInWithEmailAndPassword(email, password);
         const { data } = await axios.post('https://young-earth-40481.herokuapp.com/login', { email })
-        console.log(data);
         localStorage.setItem('accessToken', data.accessToken);
         navigate(from, { replace: true });
 

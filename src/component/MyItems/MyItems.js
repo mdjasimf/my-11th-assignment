@@ -7,7 +7,6 @@ import Loading from '../Loading/Loading';
 const UserItems = () => {
     const [myItems, setmyItems] = useState([]);
     const [user, loading] = useAuthState(auth);
-    console.log(user.email)
     useEffect(() => {
         const getItems = async () => {
             const email = user.email;

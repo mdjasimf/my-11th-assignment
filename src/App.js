@@ -13,6 +13,7 @@ import NoteFound from './component/NoteFound/NoteFound';
 import PrivateAuth from './component/PrivateAuth/PrivateAuth';
 import Registration from './component/Registration/Registration';
 import MyItems from './component/MyItems/MyItems'
+import Dashboard from '../../my-12th-assignment-client/src/Pages/Dashboard';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='/dashboard' element={<Dashboard></Dashboard>}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/manageInventory' element={
           <PrivateAuth>
